@@ -314,9 +314,16 @@ exports.addTestInnovacion = functions.https.onCall(async (data) => {
     ,
   }
 
+  const testInnovacion = await admin.firestore()
+    .collection('proyectos')
+    .doc(targetDocument)
+    .collection('testInnovacion')
+    .add({cuestionario,resultados});
+
   return {
     code: 'ok',
-    message: `Test de innovacion nuevo con el ID: ${proyectoNuevo.id}.`,
+    // message: `Test de innovacion nuevo con el ID: ${testInnovacion.id}.`,
     resultados,
+    testInnovacion
   }
 });
