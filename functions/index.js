@@ -15,6 +15,8 @@ const { getProyect } = require('./utils/proyects/getProyect')
 
 // test innovacion
 const { addTestInnovacion } = require('./utils/test-innovacion/index')
+// capacidades de innovacion
+const { addInnovationCapacities } = require('./utils/capadidadesDeInnovacion/index')
 
 
 ////////////////////////////////////////////////////
@@ -43,3 +45,7 @@ exports.getProyect = getProyect
 // test-innovacion
 
 exports.addTestInnovacion = addTestInnovacion
+
+// capacidades-de-innovacion
+
+exports.addInnovationCapacities = addInnovationCapacities
