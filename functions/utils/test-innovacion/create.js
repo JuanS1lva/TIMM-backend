@@ -23,7 +23,7 @@ exports.addTestInnovacion = functions.https.onCall(async (data) => {
     return ((x+0.01)/1.001)
   })
 
-  resultados.lel = cuestionario['lel'].map((x)=>{
+  resultados.IeI = cuestionario['IeI'].map((x)=>{
     return ((x+0.01)/1.001)
   })
 
@@ -76,14 +76,14 @@ exports.addTestInnovacion = functions.https.onCall(async (data) => {
         (resultados.laDireccion[1] < 0 || resultados.laDireccion[1] > 5.1 ? 0 : resultados.laDireccion[1])+
         (resultados.laDireccion[2] < 0 || resultados.laDireccion[2] > 5.1 ? 0 : resultados.laDireccion[2])+
         (resultados.laDireccion[8] < 0 || resultados.laDireccion[8] > 5.1 ? 0 : resultados.laDireccion[8])+
-        (resultados.lel[2] < 0 || resultados.lel[2] > 5.1 ? 0 : resultados.lel[2])
+        (resultados.IeI[2] < 0 || resultados.IeI[2] > 5.1 ? 0 : resultados.IeI[2])
       )
       /
       (
         (resultados.laDireccion[1] < 0 || resultados.laDireccion[1] > 5.1 ? 0 : 1)+
         (resultados.laDireccion[2] < 0 || resultados.laDireccion[2] > 5.1 ? 0 : 1)+
         (resultados.laDireccion[8] < 0 || resultados.laDireccion[8] > 5.1 ? 0 : 1)+
-        (resultados.lel[2] < 0 || resultados.lel[2] > 5.1 ? 0 : 1)
+        (resultados.IeI[2] < 0 || resultados.IeI[2] > 5.1 ? 0 : 1)
       )
     ,
     ['vision']:
@@ -91,7 +91,7 @@ exports.addTestInnovacion = functions.https.onCall(async (data) => {
         (resultados.laDireccion[3] < 0 || resultados.laDireccion[3] > 5.1 ? 0 : resultados.laDireccion[3])+
         (resultados.laDireccion[9] < 0 || resultados.laDireccion[9] > 5.1 ? 0 : resultados.laDireccion[9])+
         (resultados.CME[5] < 0 || resultados.CME[5] > 5.1 ? 0 : resultados.CME[5])+
-        (resultados.lel[0] < 0 || resultados.lel[0] > 5.1 ? 0 : resultados.lel[0])+
+        (resultados.IeI[0] < 0 || resultados.IeI[0] > 5.1 ? 0 : resultados.IeI[0])+
         (resultados.Adt[1] < 0 || resultados.Adt[1] > 5.1 ? 0 : resultados.Adt[1])
       )
       /
@@ -99,7 +99,7 @@ exports.addTestInnovacion = functions.https.onCall(async (data) => {
         (resultados.laDireccion[3] < 0 || resultados.laDireccion[3] > 5.1 ? 0 : 1)+
         (resultados.laDireccion[9] < 0 || resultados.laDireccion[9] > 5.1 ? 0 : 1)+
         (resultados.CME[5] < 0 || resultados.CME[5] > 5.1 ? 0 : 1)+
-        (resultados.lel[0] < 0 || resultados.lel[0] > 5.1 ? 0 : 1)+
+        (resultados.IeI[0] < 0 || resultados.IeI[0] > 5.1 ? 0 : 1)+
         (resultados.Adt[1] < 0 || resultados.Adt[1] > 5.1 ? 0 : 1)
       )
     ,
@@ -137,29 +137,29 @@ exports.addTestInnovacion = functions.https.onCall(async (data) => {
       (
         (resultados.CME[4] < 0 || resultados.CME[4] > 5.1 ? 0 : resultados.CME[4])+
         (resultados.CME[7] < 0 || resultados.CME[7] > 5.1 ? 0 : resultados.CME[7])+
-        (resultados.lel[1] < 0 || resultados.lel[1] > 5.1 ? 0 : resultados.lel[1])+
+        (resultados.IeI[1] < 0 || resultados.IeI[1] > 5.1 ? 0 : resultados.IeI[1])+
         (resultados.TyP[2] < 0 || resultados.TyP[2] > 5.1 ? 0 : resultados.TyP[2])
       )
       /
       (
         (resultados.CME[4] < 0 || resultados.CME[4] > 5.1 ? 0 : 1)+
         (resultados.CME[7] < 0 || resultados.CME[7] > 5.1 ? 0 : 1)+
-        (resultados.lel[1] < 0 || resultados.lel[1] > 5.1 ? 0 : 1)+
+        (resultados.IeI[1] < 0 || resultados.IeI[1] > 5.1 ? 0 : 1)+
         (resultados.TyP[2] < 0 || resultados.TyP[2] > 5.1 ? 0 : 1)
       )
     ,
     ['gestionarProyectos']:
       (
-        (resultados.lel[3] < 0 || resultados.lel[3] > 5.1 ? 0 : resultados.lel[3])+
-        (resultados.lel[4] < 0 || resultados.lel[4] > 5.1 ? 0 : resultados.lel[4])+
+        (resultados.IeI[3] < 0 || resultados.IeI[3] > 5.1 ? 0 : resultados.IeI[3])+
+        (resultados.IeI[4] < 0 || resultados.IeI[4] > 5.1 ? 0 : resultados.IeI[4])+
         (resultados.TyP[0] < 0 || resultados.TyP[0] > 5.1 ? 0 : resultados.TyP[0])+
         (resultados.Adt[3] < 0 || resultados.Adt[3] > 5.1 ? 0 : resultados.Adt[3])+
         (resultados.Adt[7] < 0 || resultados.Adt[7] > 5.1 ? 0 : resultados.Adt[7])
       )
       /
       (
-        (resultados.lel[4] < 0 || resultados.lel[4] > 5.1 ? 0 : 1)+
-        (resultados.lel[3] < 0 || resultados.lel[3] > 5.1 ? 0 : 1)+
+        (resultados.IeI[4] < 0 || resultados.IeI[4] > 5.1 ? 0 : 1)+
+        (resultados.IeI[3] < 0 || resultados.IeI[3] > 5.1 ? 0 : 1)+
         (resultados.TyP[0] < 0 || resultados.TyP[0] > 5.1 ? 0 : 1)+
         (resultados.Adt[3] < 0 || resultados.Adt[3] > 5.1 ? 0 : 1)+
         (resultados.Adt[7] < 0 || resultados.Adt[7] > 5.1 ? 0 : 1)
@@ -167,7 +167,7 @@ exports.addTestInnovacion = functions.https.onCall(async (data) => {
     ,
     ['medidas']:
       (
-        (resultados.lel[5] < 0 || resultados.lel[5] > 5.1 ? 0 : resultados.lel[5])+
+        (resultados.IeI[5] < 0 || resultados.IeI[5] > 5.1 ? 0 : resultados.IeI[5])+
         (resultados.TyP[1] < 0 || resultados.TyP[1] > 5.1 ? 0 : resultados.TyP[1])+
         (resultados.TyP[5] < 0 || resultados.TyP[5] > 5.1 ? 0 : resultados.TyP[5])+
         (resultados.TyP[6] < 0 || resultados.TyP[6] > 5.1 ? 0 : resultados.TyP[6])
@@ -175,7 +175,7 @@ exports.addTestInnovacion = functions.https.onCall(async (data) => {
       /
       (
 
-        (resultados.lel[5] < 0 || resultados.lel[5] > 5.1 ? 0 : 1)+
+        (resultados.IeI[5] < 0 || resultados.IeI[5] > 5.1 ? 0 : 1)+
         (resultados.TyP[1] < 0 || resultados.TyP[1] > 5.1 ? 0 : 1)+
         (resultados.TyP[5] < 0 || resultados.TyP[5] > 5.1 ? 0 : 1)+
         (resultados.TyP[6] < 0 || resultados.TyP[6] > 5.1 ? 0 : 1)
@@ -185,7 +185,7 @@ exports.addTestInnovacion = functions.https.onCall(async (data) => {
       (
         (resultados.CME[6] < 0 || resultados.CME[6] > 5.1 ? 0 : resultados.CME[6])+
         (resultados.CME[8] < 0 || resultados.CME[8] > 5.1 ? 0 : resultados.CME[8])+
-        (resultados.lel[7] < 0 || resultados.lel[7] > 5.1 ? 0 : resultados.lel[7])+
+        (resultados.IeI[7] < 0 || resultados.IeI[7] > 5.1 ? 0 : resultados.IeI[7])+
         (resultados.Adt[5] < 0 || resultados.Adt[5] > 5.1 ? 0 : resultados.Adt[5])
       )
       /
@@ -193,13 +193,13 @@ exports.addTestInnovacion = functions.https.onCall(async (data) => {
 
         (resultados.CME[6] < 0 || resultados.CME[6] > 5.1 ? 0 : 1)+
         (resultados.CME[8] < 0 || resultados.CME[8] > 5.1 ? 0 : 1)+
-        (resultados.lel[7] < 0 || resultados.lel[7] > 5.1 ? 0 : 1)+
+        (resultados.IeI[7] < 0 || resultados.IeI[7] > 5.1 ? 0 : 1)+
         (resultados.Adt[5] < 0 || resultados.Adt[5] > 5.1 ? 0 : 1)
       )
     ,
     ['filtrarSeleccionar']:
       (
-        (resultados.lel[6] < 0 || resultados.lel[6] > 5.1 ? 0 : resultados.lel[6])+
+        (resultados.IeI[6] < 0 || resultados.IeI[6] > 5.1 ? 0 : resultados.IeI[6])+
         (resultados.TyP[3] < 0 || resultados.TyP[3] > 5.1 ? 0 : resultados.TyP[3])+
         (resultados.TyP[4] < 0 || resultados.TyP[4] > 5.1 ? 0 : resultados.TyP[4])+
         (resultados.Adt[8] < 0 || resultados.Adt[8] > 5.1 ? 0 : resultados.Adt[8])
@@ -207,7 +207,7 @@ exports.addTestInnovacion = functions.https.onCall(async (data) => {
       /
       (
 
-        (resultados.lel[6] < 0 || resultados.lel[6] > 5.1 ? 0 : 1)+
+        (resultados.IeI[6] < 0 || resultados.IeI[6] > 5.1 ? 0 : 1)+
         (resultados.TyP[3] < 0 || resultados.TyP[3] > 5.1 ? 0 : 1)+
         (resultados.TyP[4] < 0 || resultados.TyP[4] > 5.1 ? 0 : 1)+
         (resultados.Adt[8] < 0 || resultados.Adt[8] > 5.1 ? 0 : 1)
@@ -215,8 +215,8 @@ exports.addTestInnovacion = functions.https.onCall(async (data) => {
     ,
     ['capacidadGenerarBeneficios']:
       (
-        (resultados.lel[8] < 0 || resultados.lel[8] > 5.1 ? 0 : resultados.lel[8])+
-        (resultados.lel[9] < 0 || resultados.lel[9] > 5.1 ? 0 : resultados.lel[9])+
+        (resultados.IeI[8] < 0 || resultados.IeI[8] > 5.1 ? 0 : resultados.IeI[8])+
+        (resultados.IeI[9] < 0 || resultados.IeI[9] > 5.1 ? 0 : resultados.IeI[9])+
         (resultados.TyP[7] < 0 || resultados.TyP[7] > 5.1 ? 0 : resultados.TyP[7])+
         (resultados.TyP[8] < 0 || resultados.TyP[8] > 5.1 ? 0 : resultados.TyP[8])+
         (resultados.TyP[9] < 0 || resultados.TyP[9] > 5.1 ? 0 : resultados.TyP[9])
@@ -224,8 +224,8 @@ exports.addTestInnovacion = functions.https.onCall(async (data) => {
       /
       (
 
-        (resultados.lel[8] < 0 || resultados.lel[8] > 5.1 ? 0 : 1)+
-        (resultados.lel[9] < 0 || resultados.lel[9] > 5.1 ? 0 : 1)+
+        (resultados.IeI[8] < 0 || resultados.IeI[8] > 5.1 ? 0 : 1)+
+        (resultados.IeI[9] < 0 || resultados.IeI[9] > 5.1 ? 0 : 1)+
         (resultados.TyP[7] < 0 || resultados.TyP[7] > 5.1 ? 0 : 1)+
         (resultados.TyP[8] < 0 || resultados.TyP[8] > 5.1 ? 0 : 1)+
         (resultados.TyP[9] < 0 || resultados.TyP[9] > 5.1 ? 0 : 1)
@@ -245,6 +245,22 @@ exports.addTestInnovacion = functions.https.onCall(async (data) => {
       )
     ,
   }
+  let graficos1=[]
+
+  graficos1.push(resultados.concretado1['culturaInnovadora'])
+  graficos1.push(resultados.concretado1['organizacion'])
+  graficos1.push(resultados.concretado1['estrategia'])
+  graficos1.push(resultados.concretado1['vision'])
+  graficos1.push(resultados.concretado1['escucharAlCliente'])
+  graficos1.push(resultados.concretado1['aperturaAlExterior'])
+  graficos1.push(resultados.concretado1['gestionarProyectos'])
+  graficos1.push(resultados.concretado1['medidas'])
+  graficos1.push(resultados.concretado1['generarIdeas'])
+  graficos1.push(resultados.concretado1['filtrarSeleccionar'])
+  graficos1.push(resultados.concretado1['capacidadGenerarBeneficios'])
+  graficos1.push(resultados.concretado1['capacidadRevisarAprender'])
+
+
   resultados.concretado2 = {
     ['CulturaYOrganizacion']:
       (
@@ -314,16 +330,25 @@ exports.addTestInnovacion = functions.https.onCall(async (data) => {
     ,
   }
 
+  let graficos2 = []
+
+  graficos2.push(resultados.concretado2['CulturaYOrganizacion'])
+  graficos2.push(resultados.concretado2['VisionYEstrategia'])
+  graficos2.push(resultados.concretado2['AperturaAlExterior'])
+  graficos2.push(resultados.concretado2['Procesos'])
+  graficos2.push(resultados.concretado2['Explorar'])
+  graficos2.push(resultados.concretado2['Realizar'])
+
   const testInnovacion = await admin.firestore()
     .collection('proyectos')
     .doc(targetDocument)
     .collection('testInnovacion')
-    .add({cuestionario,resultados});
+    .doc('test')
+    .set({cuestionario,resultados,graficos1,graficos2});
 
   return {
     code: 'ok',
     // message: `Test de innovacion nuevo con el ID: ${testInnovacion.id}.`,
-    resultados,
-    testInnovacion
+    testInnovacion,
   }
 });

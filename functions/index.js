@@ -14,9 +14,12 @@ const { deleteProyect } = require('./utils/proyects/deleteProyect')
 const { getProyect } = require('./utils/proyects/getProyect')
 
 // test innovacion
-const { addTestInnovacion } = require('./utils/test-innovacion/index')
+const { addTestInnovacion } = require('./utils/test-innovacion/create')
+const { getTestInnovacion } = require('./utils/test-innovacion/get')
 // capacidades de innovacion
 const { addInnovationCapacities } = require('./utils/capadidadesDeInnovacion/index')
+
+
 
 
 ////////////////////////////////////////////////////
@@ -45,7 +48,10 @@ exports.getProyect = getProyect
 // test-innovacion
 
 exports.addTestInnovacion = addTestInnovacion
+exports.getTestInnovacion = getTestInnovacion
 
 // capacidades-de-innovacion
 
 exports.addInnovationCapacities = addInnovationCapacities
+
+
