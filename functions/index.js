@@ -14,7 +14,8 @@ const { deleteProyect } = require('./utils/proyects/deleteProyect')
 const { getProyect } = require('./utils/proyects/getProyect')
 
 // test innovacion
-const { addTestInnovacion } = require('./utils/test-innovacion/index')
+const { addTestInnovacion } = require('./utils/test-innovacion/create')
+const { getTestInnovacion } = require('./utils/test-innovacion/get')
 
 
 ////////////////////////////////////////////////////
@@ -43,3 +44,4 @@ exports.getProyect = getProyect
 // test-innovacion
 
 exports.addTestInnovacion = addTestInnovacion
+exports.getTestInnovacion = getTestInnovacion
