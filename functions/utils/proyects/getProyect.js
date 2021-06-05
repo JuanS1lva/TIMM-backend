@@ -14,7 +14,7 @@ exports.getProyect = functions.https.onCall(async (data) => {
     .doc(targetDocument)
     .get();
 
-  snapshot = snapshot.data()
+  snapshot = snapshot.data() // casi equivalente a JSON()
 
   return {
     code: 'ok',

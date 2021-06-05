@@ -18,6 +18,7 @@ const { addTestInnovacion } = require('./utils/test-innovacion/create')
 const { getTestInnovacion } = require('./utils/test-innovacion/get')
 // capacidades de innovacion
 const { addInnovationCapacities } = require('./utils/capadidadesDeInnovacion/index')
+const { getCDI } = require('./utils/capadidadesDeInnovacion/getCDI')
 
 
 
@@ -53,5 +54,6 @@ exports.getTestInnovacion = getTestInnovacion
 // capacidades-de-innovacion
 
 exports.addInnovationCapacities = addInnovationCapacities
+exports.getCDI = getCDI
 
 

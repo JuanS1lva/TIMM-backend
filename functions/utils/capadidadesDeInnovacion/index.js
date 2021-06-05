@@ -3,97 +3,14 @@ const functions = require('firebase-functions');
 const admin = require('firebase-admin');
 const flatten = require("flat")
 const testOBjt = {
-  "obs": {
-    "a": {
-      "a": "1",
-      "c": "2",
-      "d": "3"
-    },
-    "b": {
-      "a": "5",
-      "b": "4",
-      "c": "4",
-      "d": "2"
-    },
-    "c": {
-      "a": "4",
-      "b": "4",
-      "d": "2"
-    }
-  },
-  "ges": {
-    "a": {
-      "a": "1",
-      "b": "3",
-      "d": "2"
-    },
-    "b": {
-      "a": "1",
-      "b": "3",
-      "c": "5",
-      "d": "4"
-    },
-    "c": {
-      "a": "1",
-      "b": "2"
-    }
-  },
-  "apr": {
-    "a": {
-      "a": "3",
-      "b": "3",
-      "c": "4"
-    },
-    "b": {
-      "a": "4",
-      "b": "5",
-      "c": "2"
-    },
-    "c": {
-      "a": "4",
-      "b": "1",
-      "c": "3",
-      "d": "3"
-    }
-  },
-  "tra": {
-    "a": {
-      "a": "2",
-      "b": "5",
-      "d": "5"
-    },
-    "b": {
-      "a": "3",
-      "b": "5",
-      "d": "4"
-    },
-    "c": {
-      "a": "5",
-      "c": "4"
-    }
-  },
-  "sos": {
-    "a": {
-      "a": "2",
-      "b": "2",
-      "c": "3"
-    },
-    "b": {
-      "a": "3",
-      "c": "4",
-      "d": "5"
-    },
-    "c": {
-      "b": "3"
-    }
-  }
+  
 
 }
 exports.addInnovationCapacities = functions.https.onCall(async (data) => {
   try {
-    const targetDocument = 'ULtInrpP8OWofxh9QCB8'
+    const targetDocument = data.proyecto
     // promedios por rubros
-    const flattenObj = flatten(testOBjt)
+    const flattenObj = flatten(data.cuestionario)
     const aCounter = Object.keys(flattenObj).filter((item)=>item.endsWith(".a"))
     .reduce((counter,item)=>counter+Number(flattenObj[item],10),0)/15
     const bCounter = Object.keys(flattenObj).filter((item)=>item.endsWith(".b"))
@@ -115,16 +32,16 @@ exports.addInnovationCapacities = functions.https.onCall(async (data) => {
     for (const value of tempArra) {
       //obs
       if(value.includes('obs.a')){
-        result.obs[0]=(result.obs[0] + Number(flattenObj[value],10))/3
+        result.obs[0]=result.obs[0] + Number(flattenObj[value],10)/3
       }
       if(value.includes('obs.b')){
-        result.obs[1]=(result.obs[1] + Number(flattenObj[value],10))/4
+        result.obs[1]=result.obs[1] + Number(flattenObj[value],10)/4
       }
       if(value.includes('obs.c')){
-        result.obs[2]=(result.obs[2] + Number(flattenObj[value],10))/3
+        result.obs[2]=result.obs[2] + Number(flattenObj[value],10)/3
       }
       if(value.includes('obs')){
-        result.obs[3]=(result.obs[3] + Number(flattenObj[value],10))/10
+        result.obs[3]=result.obs[3] + Number(flattenObj[value],10)/10
       }
       //ges
       if(value.includes('ges.a')){
@@ -173,10 +90,10 @@ exports.addInnovationCapacities = functions.https.onCall(async (data) => {
         result.sos[1]=result.sos[1] + Number(flattenObj[value],10)/3
       }
       if(value.includes('sos.c')){
-        result.sos[2]=result.sos[2] + Number(flattenObj[value],10)/2
+        result.sos[2]=result.sos[2] + Number(flattenObj[value],10)
       }
       if(value.includes('sos')){
-        result.sos[3]=result.sos[3] + Number(flattenObj[value],10)/8
+        result.sos[3]=result.sos[3] + Number(flattenObj[value],10)/7
       }
     }
     console.log({aCounter,bCounter,cCounter,dCounter},{result});
@@ -184,19 +101,18 @@ exports.addInnovationCapacities = functions.https.onCall(async (data) => {
       .collection('proyectos')
       .doc(targetDocument)
       .collection('capacidadesDeInnvoacion')
-      .add({average:{aCounter,bCounter,cCounter,dCounter},result});
+      .doc("resultados")
+      .set({
+        average:{aCounter,bCounter,cCounter,dCounter},
+        result,
+        data:data.cuestionario
+      });
+      console.log(capacidadesDeInnovacion);
     return {
       code: 'ok',
       // message: `Test de innovacion nuevo con el ID: ${testInnovacion.id}.`,
-      resultados,
+      resultados:{average:{aCounter,bCounter,cCounter,dCounter},result},
       capacidadesDeInnovacion
-    }
-
-
-
-    throw {
-      code: "not-found",
-      message: "no se encontro la colletion"
     }
   } catch (error) {
     throw new functions.https.HttpsError(error.code || "internal", error.message || "Unknow Error")
