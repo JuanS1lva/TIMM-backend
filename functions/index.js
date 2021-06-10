@@ -19,8 +19,9 @@ const { getTestInnovacion } = require('./utils/test-innovacion/get')
 // capacidades de innovacion
 const { addInnovationCapacities } = require('./utils/capadidadesDeInnovacion/index')
 const { getCDI } = require('./utils/capadidadesDeInnovacion/getCDI')
-
-
+// Test de transformacion digital
+const { setTTD } = require('./utils/transformacionDigital/setTDD')
+const { getTTD } = require('./utils/transformacionDigital/getTDD')
 
 
 ////////////////////////////////////////////////////
@@ -56,4 +57,7 @@ exports.getTestInnovacion = getTestInnovacion
 exports.addInnovationCapacities = addInnovationCapacities
 exports.getCDI = getCDI
 
+// test-de-transformacion-digital
 
+exports.setTTD = setTTD
+exports.getTTD = getTTD

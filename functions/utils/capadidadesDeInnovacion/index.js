@@ -2,10 +2,7 @@ const functions = require('firebase-functions');
 // The Firebase Admin SDK to access Firestore.
 const admin = require('firebase-admin');
 const flatten = require("flat")
-const testOBjt = {
-  
 
-}
 exports.addInnovationCapacities = functions.https.onCall(async (data) => {
   try {
     const targetDocument = data.proyecto
@@ -96,7 +93,7 @@ exports.addInnovationCapacities = functions.https.onCall(async (data) => {
         result.sos[3]=result.sos[3] + Number(flattenObj[value],10)/7
       }
     }
-    console.log({aCounter,bCounter,cCounter,dCounter},{result});
+    //console.log({aCounter,bCounter,cCounter,dCounter},{result});
     const capacidadesDeInnovacion = await admin.firestore()
       .collection('proyectos')
       .doc(targetDocument)
