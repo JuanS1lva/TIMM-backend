@@ -33,6 +33,53 @@ exports.getProyectByUser = functions.https.onCall(async (data) => {
       resultado = doc.data();
     });
 
+    let nombresProyectosPropios = []
+    if (resultado.proyectosPropios){
+      for (const proyectoPropio of resultado.proyectosPropios) {
+        try {
+          snapshot = await admin.firestore()
+            .collection('proyectos')
+            .doc(proyectoPropio)
+            .get();
+  
+          snapshot = snapshot.data()
+          nombresProyectosPropios.push(snapshot.nombre)
+        } catch (error) {
+          throw new functions.https.HttpsError(
+            "internal",
+            "Unknow Error"
+          )
+        }
+      }
+    }
+
+    let nombresProyectosInvitados = []
+    if (resultado.proyectosInvitados){
+      for (const proyectoInvitado of resultado.proyectosInvitados) {
+        try {
+          snapshot = await admin.firestore()
+            .collection('proyectos')
+            .doc(proyectoInvitado)
+            .get();
+  
+          snapshot = snapshot.data()
+          nombresProyectosInvitados.push(snapshot.nombre)
+        } catch (error) {
+          throw new functions.https.HttpsError(
+            "internal",
+            "Unknow Error"
+          )
+        }
+      }
+    }
+
+    resultado = { 
+      ...resultado,
+      nombresProyectosPropios,
+      nombresProyectosInvitados
+    }
+
+
     return {
       code: 'ok',
       message: `Proyectos encontrados.`,
