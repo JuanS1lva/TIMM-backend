@@ -22,6 +22,9 @@ const { getCDI } = require('./utils/capadidadesDeInnovacion/getCDI')
 // Test de transformacion digital
 const { setTTD } = require('./utils/transformacionDigital/setTDD')
 const { getTTD } = require('./utils/transformacionDigital/getTDD')
+// Test de IA
+const { setTestIA } = require('./utils/testIA/setTestIA')
+const { getTestIA } = require('./utils/testIA/getTestIA')
 
 
 ////////////////////////////////////////////////////
@@ -61,3 +64,9 @@ exports.getCDI = getCDI
 
 exports.setTTD = setTTD
 exports.getTTD = getTTD
+
+// test-de-IA
+
+exports.setTestIA = setTestIA
+exports.getTestIA = getTestIA
+

@@ -2,30 +2,6 @@ const functions = require('firebase-functions');
 // The Firebase Admin SDK to access Firestore.
 const admin = require('firebase-admin');
 //test de transformación digital
-const objTest = {
-  "transForm": [
-    "1",
-    "2.5",
-    "5",
-    "5",
-    "2.5",
-    "2.5",
-    "2.5",
-    "2.5",
-    "2.5",
-    "2.5",
-    "1",
-    "5",
-    "2.5",
-    "1",
-    "2.5",
-    "5",
-    "5",
-    "1",
-    "2.5",
-    "2.5"
-  ]
-}
 exports.setTTD = functions.https.onCall(async (data) => {
   try {
     const targetDocument = data.proyecto
