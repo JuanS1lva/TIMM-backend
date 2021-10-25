@@ -25,6 +25,9 @@ const { getTTD } = require('./utils/transformacionDigital/getTDD')
 // Test de IA
 const { setTestIA } = require('./utils/testIA/setTestIA')
 const { getTestIA } = require('./utils/testIA/getTestIA')
+// Test de Analitica
+const { setAnalitica } = require('./utils/analitica/setAnalitica')
+const { getAnalitica } = require('./utils/analitica/getAnalitica')
 
 
 ////////////////////////////////////////////////////
@@ -69,4 +72,10 @@ exports.getTTD = getTTD
 
 exports.setTestIA = setTestIA
 exports.getTestIA = getTestIA
+
+// test-analitica
+
+exports.setAnalitica = setAnalitica
+exports.getAnalitica = getAnalitica
+
 
