@@ -13,6 +13,7 @@ const { editProyect } = require('./utils/proyects/editProyect')
 const { deleteProyect } = require('./utils/proyects/deleteProyect')
 const { getProyect } = require('./utils/proyects/getProyect')
 const { getProyectByUser } = require('./utils/proyects/getProyectByUser')
+const { shareProyect } = require('./utils/proyects/shareProyect')
 
 // test innovacion
 const { addTestInnovacion } = require('./utils/test-innovacion/create')
@@ -46,6 +47,7 @@ exports.editProyect = editProyect
 exports.deleteProyect = deleteProyect
 exports.getProyect = getProyect
 exports.getProyectByUser = getProyectByUser
+exports.shareProyect = shareProyect
 
 // test-innovacion
 
