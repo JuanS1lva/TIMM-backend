@@ -7,7 +7,7 @@ exports.editProyect = functions.https.onCall(async (data) => {
   console.log(data);
   const infoProyecto = {
     nombre: data.nombre,
-    responsable: data.responsable
+    descripcion: data.descripcion
   }
   const targetDocument = data.proyecto
 
