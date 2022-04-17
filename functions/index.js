@@ -28,6 +28,8 @@ const { getTestIA } = require('./utils/testIA/getTestIA')
 // Test de Analitica
 const { setAnalitica } = require('./utils/analitica/setAnalitica')
 const { getAnalitica } = require('./utils/analitica/getAnalitica')
+// Test de diagnostico de madurez digital
+const { postProyectBudget } = require('./utils/diagnosticoMadurezDigital/postProyectBudget')
 
 
 ////////////////////////////////////////////////////
@@ -77,5 +79,9 @@ exports.getTestIA = getTestIA
 
 exports.setAnalitica = setAnalitica
 exports.getAnalitica = getAnalitica
+
+// test-diagnostico-modelo-madurez
+
+exports.postProyectBudget = postProyectBudget
 
 
