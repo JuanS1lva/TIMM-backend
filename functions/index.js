@@ -30,6 +30,7 @@ const { setAnalitica } = require('./utils/analitica/setAnalitica')
 const { getAnalitica } = require('./utils/analitica/getAnalitica')
 // Test de diagnostico de madurez digital
 const { postProyectBudget } = require('./utils/diagnosticoMadurezDigital/postProyectBudget')
+const { postDMDForm } = require('./utils/diagnosticoMadurezDigital/postDMDForm')
 
 
 ////////////////////////////////////////////////////
@@ -83,5 +84,6 @@ exports.getAnalitica = getAnalitica
 // test-diagnostico-modelo-madurez
 
 exports.postProyectBudget = postProyectBudget
+exports.postDMDForm = postDMDForm
 
 
